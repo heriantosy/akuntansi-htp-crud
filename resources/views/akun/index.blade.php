@@ -6,6 +6,7 @@
 <div class="card-header">
 <a href="{{ asset('akun/tambah')  }}">Tambah Data</a>
 <table class="table table-sm table-stripped table-bordered">
+   
     <thead>
  <tr style="background:black;color:white">
     <td>No</td>

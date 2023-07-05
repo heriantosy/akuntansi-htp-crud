@@ -1,3 +1,5 @@
+@extends('layout.main2')
+@section('content')
 <h1>Jadwal Kuliah</h1>
 <table border="1" width="75%">
 <tr>
@@ -22,3 +24,4 @@ $no++;
 ?>
 
 </table>
+@endsection
