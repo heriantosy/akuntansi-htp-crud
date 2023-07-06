@@ -24,4 +24,3 @@ $no++;
 ?>
 
 </table>
-@endsection

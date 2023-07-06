@@ -8,11 +8,12 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DosenSeeder extends Seeder
 {
-	/**
-	 * Run the database seeds.
-	 */
-	public function run(): void
-	{
-		Dosen::factory()->count(10)->create();
-	}
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $this->command->info('Seeding database from Class DosenSeeder By Galeh Ludi');
+        Dosen::factory()->count(10)->create();
+    }
 }

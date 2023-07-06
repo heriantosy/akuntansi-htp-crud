@@ -42,6 +42,8 @@ class JadwalSeeder extends Seeder
         if (Matakuliah::count() === 0)
             $this->call(MatakuliahSeeder::class);
 
+        $this->command->info('Seeding database from Class JadwalSeeder By Galeh Ludi');
+
         $count = 0;
         if (Dosen::count() > Matakuliah::count())
             $count = Matakuliah::count();
