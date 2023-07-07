@@ -1,0 +1,58 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Akun_model;
+
+class AditAkunController extends Controller
+{
+    public function index(){
+        $myakun = new Akun_model();
+        $akun = $myakun->tampil_data();
+        
+        $data = array('akun' => $akun);
+        return view('adit_akun/index', $data);
+    }
+
+    public function tambah(){
+       // return ('Testing');
+       return view('adit_akun/tambah');
+    }
+
+    public function tambah_proses(Request $request){
+        // return ('Testing Proses');
+        $query = \DB::table('tabel_akuntansi_master')
+        ->insert([
+            'nomor_perkiraan'  =>  $request->nomor_perkiraan,
+            'nama_perkiraan'  =>  $request->nama_perkiraan,
+            'kelompok'  =>  $request->kelompok,
+            'tipe'  =>  $request->tipe
+        ]);
+        return redirect('adit_akun');
+    }
+
+    public function edit($id){
+        // return ('Testing');
+        $akun = \DB::table('tabel_akuntansi_master')->where('id', $id)->first();
+        //dd($akun);
+        $data = array('akun' => $akun);
+        return view('adit_akun/edit', $data);
+    }
+
+    public function edit_proses(Request $request){
+        // return ('Testing Proses');
+        $query = \DB::table('tabel_akuntansi_master')->where('id',$request->id)
+        ->update([
+            'nomor_perkiraan'   =>  $request->nomor_perkiraan,
+            'nama_perkiraan'    =>  $request->nama_perkiraan,
+            'kelompok'          =>  $request->kelompok
+        ]);
+        return redirect('adit_akun');
+    }
+
+    public function delete ($id){
+        $query = \DB::table('tabel_akuntansi_master')->where('id',$id)->delete();
+        return redirect('adit_akun');
+    }
+}

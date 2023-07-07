@@ -1,15 +1,9 @@
-@extends('layout.main')
-@section('content')
-
-<h1>Master Supplier</h1>
-<div class="card">
-<div class="card-header">
-<table class="table table-sm table-stripped table-bordered">
-    <thead>
+<h1>Jadwal Kuliah</h1>
+<table border="1" width="75%">
 <tr>
     <td>No</td>
-    <td>Kode Supplier</td>
-    <td>Nama Supplier</td>
+    <td>Nama Dosen</td>
+    <td>Nama Matakulaih</td>
 </tr>
 <?php
 $no=0; 
@@ -28,9 +22,3 @@ $no++;
 ?>
 
 </table>
-</tbody>
-
-</div>
-</div>
-
-@endsection

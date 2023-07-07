@@ -1,9 +1,6 @@
-@extends('layout.main2')
-@section('content')
-
 +<h1>Data Transaksi</h1>
 <a href="{{ asset('views_yosi/tambah_yosi')  }}">Tambah Data</a>
-<table class="table table-bordered">
+<table border="1" width="100%">
  <tr style="background:black;color:white">
     <td>No</td>
     <td>ID Transaksi</td>
@@ -36,4 +33,3 @@ $no++;
 }
 ?>
 </table>
-@endsection

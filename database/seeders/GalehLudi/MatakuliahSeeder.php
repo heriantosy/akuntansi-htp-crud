@@ -14,6 +14,7 @@ class MatakuliahSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->command->info('Seeding database from Class MatakuliahSeeder By Galeh Ludi');
         $faker = fake('id_ID');
 
         $mk = [

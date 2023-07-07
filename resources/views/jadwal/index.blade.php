@@ -1,6 +1,9 @@
 @extends('layout.main2')
 @section('content')
+<<<<<<< HEAD
 
+=======
+>>>>>>> 252af40bfd5ac623166bbae2877c74f547633f55
 <h1>Jadwal Kuliah</h1>
 <table class="table table-sm table-stripped table-bordered">
 <tr>
