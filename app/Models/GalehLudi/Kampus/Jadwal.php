@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\GalehLudi;
+namespace App\Models\GalehLudi\Kampus;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +10,7 @@ class Jadwal extends Model
 {
     use HasFactory;
 
-    protected $table = 't_jadwal';
+    protected $table = 'galeh_kampus_jadwal';
     protected $primaryKey = 'jadwal_id';
     protected $keyType = 'string';
 

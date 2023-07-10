@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\GalehLudi;
+namespace App\Models\GalehLudi\Kampus;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -11,7 +11,7 @@ class Matakuliah extends Model
 {
     use HasFactory;
 
-    protected $table = 't_matakuliah';
+    protected $table = 'galeh_kampus_matakuliah';
 
     protected $primaryKey = 'mkid';
     public $incrementing = false;

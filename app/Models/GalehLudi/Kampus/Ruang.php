@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Models\GalehLudi;
+namespace App\Models\GalehLudi\Kampus;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Dosen extends Model
+class Ruang extends Model
 {
     use HasFactory;
 
-    protected $table = 't_dosen';
-    protected $primaryKey = 'dosen_id';
+    protected $table = 'galeh_kampus_ruang';
+    protected $primaryKey = 'ruang_id';
     protected $keyType = 'string';
 }
