@@ -22,7 +22,7 @@ class AbariAkunController extends Controller
 
     public function tambah_proses(Request $request){
         // return ('Testing Proses');
-        $query = \DB::table('abari_tabel_akuntansi_master')
+        $query = \DB::table('abari_t_perkiraan')
         ->insert([
             'nomor_perkiraan'  =>  $request->nomor_perkiraan,
             'nama_perkiraan'  =>  $request->nama_perkiraan,
@@ -33,7 +33,7 @@ class AbariAkunController extends Controller
 
     public function edit($id){
         // return ('Testing');
-        $akun = \DB::table('abari_tabel_akuntansi_master')->where('id', $id)->first();
+        $akun = \DB::table('abari_t_perkiraan')->where('id', $id)->first();
         //dd($akun);
         $data = array('akun' => $akun);
         return view('abari_akun/edit', $data);
@@ -41,7 +41,7 @@ class AbariAkunController extends Controller
 
     public function edit_proses(Request $request){
         // return ('Testing Proses');
-        $query = \DB::table('abari_tabel_akuntansi_master')->where('id',$request->id)
+        $query = \DB::table('abari_t_perkiraan')->where('id',$request->id)
         ->update([
             'nomor_perkiraan'   =>  $request->nomor_perkiraan,
             'nama_perkiraan'    =>  $request->nama_perkiraan,
@@ -51,7 +51,7 @@ class AbariAkunController extends Controller
     }
 
     public function delete ($id){
-        $query = \DB::table('abari_tabel_akuntansi_master')->where('id',$id)->delete();
+        $query = \DB::table('abari_t_perkiraan')->where('id',$id)->delete();
         return redirect('abari_akun');
     }
 }

@@ -48,3 +48,5 @@ require('dika.php');
 require('sephiarst.php');
 require('adit.php');
 require('ReskiUtama.php');
+
+require('abdulbari.php');
