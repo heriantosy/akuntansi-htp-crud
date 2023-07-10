@@ -33,7 +33,7 @@ Route::get('supplier', 'App\Http\Controllers\ControllerSupplier@index');
 
 Route::get('jadwal', 'App\Http\Controllers\JadwalController@index');
 
-    
+
 Route::get('indukuser', 'App\Http\Controllers\ControllerIndukUser@index');
 
 Route::get('views_yosi', 'App\Http\Controllers\ControllerYosi@index');
@@ -45,9 +45,6 @@ Route::get('views_yosi/delete_yosi/{id}', 'App\Http\Controllers\ControllerYosi@d
 
 require('galehludi.php');
 require('dika.php');
-<<<<<<< HEAD
 require('sephiarst.php');
-=======
 require('adit.php');
 require('ReskiUtama.php');
->>>>>>> 252af40bfd5ac623166bbae2877c74f547633f55
