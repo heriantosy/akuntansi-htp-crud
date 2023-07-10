@@ -13,7 +13,6 @@ class RuangSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->command->info('Seeding database from Class RuangSeeder By Galeh Ludi');
         $faker = fake('id_ID');
         $abjad = "ABCDEFGH";
 

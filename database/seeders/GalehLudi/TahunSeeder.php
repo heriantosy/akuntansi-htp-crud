@@ -14,7 +14,6 @@ class TahunSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->command->info('Seeding database from Class TahunSeeder By Galeh Ludi');
         $faker = fake('id_ID');
 
         $startDate = Carbon::now()->subYears(5)->startOfYear();

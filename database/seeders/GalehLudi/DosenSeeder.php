@@ -13,7 +13,6 @@ class DosenSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->command->info('Seeding database from Class DosenSeeder By Galeh Ludi');
         Dosen::factory()->count(10)->create();
     }
 }
