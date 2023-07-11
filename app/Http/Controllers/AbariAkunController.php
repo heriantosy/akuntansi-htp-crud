@@ -22,18 +22,22 @@ class AbariAkunController extends Controller
 
     public function tambah_proses(Request $request){
         // return ('Testing Proses');
-        $query = \DB::table('abari_t_perkiraan')
+        $query = \DB::table('abari_perkiraan')
         ->insert([
-            'nomor_perkiraan'  =>  $request->nomor_perkiraan,
-            'nama_perkiraan'  =>  $request->nama_perkiraan,
-            'kelompok'  =>  $request->kelompok
+            'PerkiraanID' => $request->PerkiraanID,
+            'NomorPerkiraan'  =>  $request->NomorPerkiraan,
+            'NamaPerkiraan'  =>  $request->NamaPerkiraan,
+            'tipe'  =>  $request->tipe,
+            'induk'  =>  $request->induk,
+            'level'  =>  $request->level,
+            'Kelompok'  =>  $request->Kelompok
         ]);
         return redirect('abari_akun');
     }
 
     public function edit($id){
         // return ('Testing');
-        $akun = \DB::table('abari_t_perkiraan')->where('id', $id)->first();
+        $akun = \DB::table('abari_perkiraan')->where('PerkiraanID', $id)->first();
         //dd($akun);
         $data = array('akun' => $akun);
         return view('abari_akun/edit', $data);
@@ -41,17 +45,21 @@ class AbariAkunController extends Controller
 
     public function edit_proses(Request $request){
         // return ('Testing Proses');
-        $query = \DB::table('abari_t_perkiraan')->where('id',$request->id)
+        $query = \DB::table('abari_perkiraan')->where('PerkiraanID',$request->PerkiraanID)
         ->update([
-            'nomor_perkiraan'   =>  $request->nomor_perkiraan,
-            'nama_perkiraan'    =>  $request->nama_perkiraan,
-            'kelompok'          =>  $request->kelompok
+            'PerkiraanID' => $request->PerkiraanID,
+            'NomorPerkiraan'  =>  $request->NomorPerkiraan,
+            'NamaPerkiraan'  =>  $request->NamaPerkiraan,
+            'tipe'  =>  $request->tipe,
+            'induk'  =>  $request->induk,
+            'level'  =>  $request->level,
+            'Kelompok'  =>  $request->Kelompok
         ]);
         return redirect('abari_akun');
     }
 
     public function delete ($id){
-        $query = \DB::table('abari_t_perkiraan')->where('id',$id)->delete();
+        $query = \DB::table('abari_perkiraan')->where('PerkiraanID',$id)->delete();
         return redirect('abari_akun');
     }
 }

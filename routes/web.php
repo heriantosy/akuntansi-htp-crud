@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::get('adit_akun', 'App\Http\Controllers\AkunController@index');
 Route::get('adit_akun/tambah', 'App\Http\Controllers\AkunController@tambah');
 Route::post('adit_akun/tambah_proses', 'App\Http\Controllers\AkunController@tambah_proses');

@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class abari_akun_model extends Model
 {
     use HasFactory;
-    protected $table ="abari_t_perkiraan";
-    protected $primaryKey ="id";
+    protected $table ="abari_perkiraan";
+    protected $primaryKey ="PerkiraanID";
 
     public function tampil_data(){
-        $query = \DB::table('abari_t_perkiraan')->get();
+        $query = \DB::table('abari_perkiraan')->get();
         return $query;
     }
 }

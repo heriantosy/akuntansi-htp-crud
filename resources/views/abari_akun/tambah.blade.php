@@ -1,8 +1,12 @@
 <h1>Tambah Data Akun</h1>
 <form action="{{ asset('abari_akun/tambah_proses') }}" method="POST">
 @csrf
-Nomor Akun <input type="text" name="nomor_perkiraan"><br>
-Nama Perkiraan <input type="text" name="nama_perkiraan"><br>
-Kelompok <input type="text" name="kelompok"><br>
+ID Perkiraan <input type="text" name="id"><br>
+Nomor Perkiraan <input type="text" name="NomorPerkiraan"><br>
+Nama Perkiraan <input type="text" name="NamaPerkiraan"><br>
+Tipe <input type="text" name="tipe"><br>
+Induk <input type="text" name="induk"><br>
+Level <input type="text" name="level"><br>
+Kelompok <input type="text" name="Kelompok"><br>
 <input type="submit" value="Simpan">
 </form>     
