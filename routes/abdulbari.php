@@ -1,11 +1,11 @@
 <?php
 
 Route::get('/abari', function () {
-    return view('abari_layout.abari_main');
+    return view('abari_layout.home');
 });
 
 Route::get('/abari/home', function () {
-    return view('abari_layout.abari_main');
+    return view('abari_layout.home');
 });
 
 Route::get('abari_akun', 'App\Http\Controllers\AbariAkunController@index');

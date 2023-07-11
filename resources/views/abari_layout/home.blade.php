@@ -6,7 +6,9 @@
 </div>
 <div class="card-body">
    <div class="alert alert-info">
-        Selamat datang di laravel 10
+        Selamat datang di Project ABDUL BARI<br>
+        Masih coba-coba..<br><br>
+        -_-
    </div>
 </div>
 </div>
