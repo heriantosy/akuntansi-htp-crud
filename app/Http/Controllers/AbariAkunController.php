@@ -62,4 +62,11 @@ class AbariAkunController extends Controller
         $query = \DB::table('abari_perkiraan')->where('PerkiraanID',$id)->delete();
         return redirect('abari_akun');
     }
-}
+
+//     public function destroy(abari_akun_model $akun, $PerkiraanID)
+//     {
+//         $data = $akun->find($PerkiraanID);    
+//         $data->delete();
+//         return redirect('abari_akun')->with('msg', 'Hapus'. $data->PerkiraanID.' berhasil');
+//     }
+ }
