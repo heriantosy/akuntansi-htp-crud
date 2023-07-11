@@ -30,7 +30,7 @@ class AbariAkunController extends Controller
             'tipe'  =>  $request->tipe,
             'induk'  =>  $request->induk,
             'level'  =>  $request->level,
-            'Kelompok'  =>  $request->Kelompok
+            'Kelompok'  =>  $request->Kelompok,
         ]);
         return redirect('abari_akun');
     }
