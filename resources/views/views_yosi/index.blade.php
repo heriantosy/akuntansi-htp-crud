@@ -1,15 +1,24 @@
-+<h1>Data Transaksi</h1>
+@extends('layout1.main2')
+@section('content')
+
+<h4><b>Data Transaksi</b></h4>
+<br>
 <a href="{{ asset('views_yosi/tambah_yosi')  }}">Tambah Data</a>
-<table border="1" width="100%">
- <tr style="background:black;color:white">
-    <td>No</td>
-    <td>ID Transaksi</td>
-    <td>Kode Jurnal</td>
-    <td>Nomor Perkiraan</td>
-    <td>Tanggal Transaksi</td>
-    <td>Bulan Transaksi</td>
-    <td>Jenis Transaksi</td>
-    <td>Aksi</td>
+<table class="table table-striped" width="100%">
+ <tr class="table-primary">
+    <td><b>No</td>
+    <td><b>ID Transaksi</td>
+    <td><b>Kode Jurnal</td>
+    <td><b>Nomor Perkiraan</td>
+    <td><b>Tanggal Transaksi</td>
+    <td><b>Bulan Transaksi</td>
+    <td><b>Jenis Transaksi</td>
+    <td><b>Keterangan Transaksi</td>
+    <td><b>Debit</td>
+    <td><b>Kredit</td>
+    <td><b>Tanggal Posting</td>
+    <td><b>Keterangan Posting</td>
+    <td><b>Aksi</td>
  </tr>   
 <?php 
 $no=0;
@@ -24,6 +33,11 @@ $no++;
     <td>{{ $rows->tanggal_transaksi }}</td>
     <td>{{ $rows->bulan_transaksi }}</td>
     <td>{{ $rows->jenis_transaksi }}</td>
+    <td>{{ $rows->keterangan_transaksi }}</td>
+    <td>{{ $rows->debet }}</td>
+    <td>{{ $rows->kredit }}</td>
+    <td>{{ $rows->tanggal_posting }}</td>
+    <td>{{ $rows->keterangan_posting }}</td>
     <td>
         <a href="{{ asset('views_yosi/edit_yosi/'.$rows->id_transaksi ) }}">Edit</a>
         <a href="{{ asset('views_yosi/delete_yosi/'.$rows->id_transaksi ) }}">Del</a>
@@ -33,3 +47,4 @@ $no++;
 }
 ?>
 </table>
+@endsection

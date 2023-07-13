@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\ModelMasterYosi;
 
 
 /*
@@ -13,30 +14,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+    $myakun = new ModelMasterYosi();
+        $views_master_yosi = $myakun->tampil_master_yosi();
+        $data = array('views_master_yosi' => $views_master_yosi);
+    return view('views_master_yosi/index', $data);
 });
 
-
-
-Route::get('adit_akun', 'App\Http\Controllers\AkunController@index');
-Route::get('adit_akun/tambah', 'App\Http\Controllers\AkunController@tambah');
-Route::post('adit_akun/tambah_proses', 'App\Http\Controllers\AkunController@tambah_proses');
-Route::get('adit_akun/edit/{id}', 'App\Http\Controllers\AkunController@edit');
-Route::post('adit_akun/edit_proses', 'App\Http\Controllers\AkunController@edit_proses');
-Route::get('adit_akun/delete/{id}', 'App\Http\Controllers\AkunController@delete');
-
-Route::get('kelompok', 'App\Http\Controllers\kevin\KelompokController@index');
-
-Route::get('akuntansitransaksi', 'App\Http\Controllers\akuntansitransaksiController@index');
-
-Route::get('supplier', 'App\Http\Controllers\ControllerSupplier@index');
-
-Route::get('jadwal', 'App\Http\Controllers\JadwalController@index');
-
-
-Route::get('indukuser', 'App\Http\Controllers\ControllerIndukUser@index');
 
 Route::get('views_yosi', 'App\Http\Controllers\ControllerYosi@index');
 Route::get('views_yosi/tambah_yosi', 'App\Http\Controllers\ControllerYosi@tambah_yosi');
@@ -45,10 +29,51 @@ Route::get('views_yosi/edit_yosi/{id}', 'App\Http\Controllers\ControllerYosi@edi
 Route::post('views_yosi/edit_proses_yosi', 'App\Http\Controllers\ControllerYosi@edit_proses_yosi');
 Route::get('views_yosi/delete_yosi/{id}', 'App\Http\Controllers\ControllerYosi@delete_yosi');
 
-require('galehludi.php');
-require('dika.php');
-require('sephiarst.php');
-require('adit.php');
-require('ReskiUtama.php');
+Route::get('views_master_yosi', 'App\Http\Controllers\ControllerMasterYosi@index');
+Route::get('views_master_yosi/tambah_yosi', 'App\Http\Controllers\ControllerMasterYosi@tambah_yosi');
+Route::post('views_master_yosi/tambah_proses_yosi', 'App\Http\Controllers\ControllerMasterYosi@tambah_proses_yosi');
+Route::get('views_master_yosi/edit_yosi/{id}', 'App\Http\Controllers\ControllerMasterYosi@edit_yosi');
+Route::post('views_master_yosi/edit_proses_yosi', 'App\Http\Controllers\ControllerMasterYosi@edit_proses_yosi');
+Route::get('views_master_yosi/delete_yosi/{id}', 'App\Http\Controllers\ControllerMasterYosi@delete_yosi');
 
-require('abdulbari.php');
+Route::get('views_induk_user_yosi', 'App\Http\Controllers\ControllerIndukUserYosi@index');
+Route::get('views_induk_user_yosi/tambah_yosi', 'App\Http\Controllers\ControllerIndukUserYosi@tambah_yosi');
+Route::post('views_induk_user_yosi/tambah_proses_yosi', 'App\Http\Controllers\ControllerIndukUserYosi@tambah_proses_yosi');
+Route::get('views_induk_user_yosi/edit_yosi/{id}', 'App\Http\Controllers\ControllerIndukUserYosi@edit_yosi');
+Route::post('views_induk_user_yosi/edit_proses_yosi', 'App\Http\Controllers\ControllerIndukUserYosi@edit_proses_yosi');
+Route::get('views_induk_user_yosi/delete_yosi/{id}', 'App\Http\Controllers\ControllerIndukUserYosi@delete_yosi');
+
+Route::get('views_backup_yosi', 'App\Http\Controllers\ControllerBackupYosi@index');
+Route::get('views_backup_yosi/tambah_yosi', 'App\Http\Controllers\ControllerBackupYosi@tambah_yosi');
+Route::post('views_backup_yosi/tambah_proses_yosi', 'App\Http\Controllers\ControllerBackupYosi@tambah_proses_yosi');
+Route::get('views_backup_yosi/edit_yosi/{id}', 'App\Http\Controllers\ControllerBackupYosi@edit_yosi');
+Route::post('views_backup_yosi/edit_proses_yosi', 'App\Http\Controllers\ControllerBackupYosi@edit_proses_yosi');
+Route::get('views_backup_yosi/delete_yosi/{id}', 'App\Http\Controllers\ControllerBackupYosi@delete_yosi');
+
+Route::get('views_tutupbuku_yosi', 'App\Http\Controllers\ControllerTutupBukuYosi@index');
+Route::get('views_tutupbuku_yosi/tambah_yosi', 'App\Http\Controllers\ControllerTutupBukuYosi@tambah_yosi');
+Route::post('views_tutupbuku_yosi/tambah_proses_yosi', 'App\Http\Controllers\ControllerTutupBukuYosi@tambah_proses_yosi');
+Route::get('views_tutupbuku_yosi/edit_yosi/{id}', 'App\Http\Controllers\ControllerTutupBukuYosi@edit_yosi');
+Route::post('views_tutupbuku_yosi/edit_proses_yosi', 'App\Http\Controllers\ControllerTutupBukuYosi@edit_proses_yosi');
+Route::get('views_tutupbuku_yosi/delete_yosi/{id}', 'App\Http\Controllers\ControllerTutupBukuYosi@delete_yosi');
+
+Route::get('views_jurnalmasuk_yosi', 'App\Http\Controllers\ControllerJurnalMasukYosi@index');
+Route::get('views_jurnalmasuk_yosi/tambah_yosi', 'App\Http\Controllers\ControllerJurnalMasukYosi@tambah_yosi');
+Route::post('views_jurnalmasuk_yosi/tambah_proses_yosi', 'App\Http\Controllers\ControllerJurnalMasukYosi@tambah_proses_yosi');
+Route::get('views_jurnalmasuk_yosi/edit_yosi/{id}', 'App\Http\Controllers\ControllerJurnalMasukYosi@edit_yosi');
+Route::post('views_jurnalmasuk_yosi/edit_proses_yosi', 'App\Http\Controllers\ControllerJurnalMasukYosi@edit_proses_yosi');
+Route::get('views_jurnalmasuk_yosi/delete_yosi/{id}', 'App\Http\Controllers\ControllerJurnalMasukYosi@delete_yosi');
+
+Route::get('views_jurnalkeluar_yosi', 'App\Http\Controllers\ControllerJurnalKeluarYosi@index');
+Route::get('views_jurnalkeluar_yosi/tambah_yosi', 'App\Http\Controllers\ControllerJurnalKeluarYosi@tambah_yosi');
+Route::post('views_jurnalkeluar_yosi/tambah_proses_yosi', 'App\Http\Controllers\ControllerJurnalKeluarYosi@tambah_proses_yosi');
+Route::get('views_jurnalkeluar_yosi/edit_yosi/{id}', 'App\Http\Controllers\ControllerJurnalKeluarYosi@edit_yosi');
+Route::post('views_jurnalkeluar_yosi/edit_proses_yosi', 'App\Http\Controllers\ControllerJurnalKeluarYosi@edit_proses_yosi');
+Route::get('views_jurnalkeluar_yosi/delete_yosi/{id}', 'App\Http\Controllers\ControllerJurnalKeluarYosi@delete_yosi');
+
+Route::get('views_jurnalumum_yosi', 'App\Http\Controllers\ControllerJurnalUmumYosi@index');
+Route::get('views_jurnalumum_yosi/tambah_yosi', 'App\Http\Controllers\ControllerJurnalUmumYosi@tambah_yosi');
+Route::post('views_jurnalumum_yosi/tambah_proses_yosi', 'App\Http\Controllers\ControllerJurnalUmumYosi@tambah_proses_yosi');
+Route::get('views_jurnalumum_yosi/edit_yosi/{id}', 'App\Http\Controllers\ControllerJurnalUmumYosi@edit_yosi');
+Route::post('views_jurnalumum_yosi/edit_proses_yosi', 'App\Http\Controllers\ControllerJurnalUmumYosi@edit_proses_yosi');
+Route::get('views_jurnalumum_yosi/delete_yosi/{id}', 'App\Http\Controllers\ControllerJurnalUmumYosi@delete_yosi');
